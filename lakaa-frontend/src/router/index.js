@@ -8,8 +8,17 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/CSR',
+      name: 'CSR',
+      component: () => import('../views/CSRView.vue')
+    },
+    {
+      path: '/Store',
+      name: 'store',
+      component: () => import('../views/StoreView.vue')
     }
   ]
 })
-
 export default router

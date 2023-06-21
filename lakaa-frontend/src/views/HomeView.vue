@@ -1,15 +1,20 @@
 <script setup>
-import * as food_collect from '@/api_request/food_collect'
-function yep() {
-  food_collect.getAll().then( resp => {
-    console.log(resp[0])
-      }
-  )
-}
+
 </script>
 
 <template>
   <main>
-    <div @click="yep">hello</div>
+    <h1></h1>
+    <router-link to="Store">Store</router-link>
+    <router-link to="CSR">CSR</router-link>
   </main>
 </template>
+
+<style scoped>
+  main {
+    align-content: space-evenly;
+  }
+ RouterLink {
+
+ }
+</style>
