@@ -1,5 +1,8 @@
 <template>
+  {{foodCollects}}}
+  {{organizations}}
   <div class="food-collects">
+
     <h2>Food Collects</h2>
     <ul>
       <li v-for="foodCollect in foodCollects" :key="foodCollect.id" class="food-collect-item">
@@ -21,31 +24,19 @@ import {getAllFoodCollects} from "@/api_request/food_collect";
 import {getAllOrgs} from "@/api_request/organization";
 
 export default {
-  data() {
-    return {
-      foodCollects: [],
-      organizations: [],
-    };
+  props: {
+    organizations: {
+      type: Array,
+      required: true
+    },
+    foodCollects: {
+      type: Array,
+      required: true
+    }
   },
   mounted() {
-    this.getAllFoodCollects();
-    this.getAllOrganizations();
   },
   methods: {
-    async getAllFoodCollects() {
-      try {
-        this.foodCollects = await getAllFoodCollects()
-      } catch (error) {
-        console.error('Error fetching food collects:', error);
-      }
-    },
-    async getAllOrganizations() {
-      try {
-        this.organizations = await getAllOrgs();
-      } catch (error) {
-        console.error('Error fetching organizations:', error);
-      }
-    },
     getOrganization(organizationId) {
       return  this.organizations.find(org => org.id === organizationId);
     },

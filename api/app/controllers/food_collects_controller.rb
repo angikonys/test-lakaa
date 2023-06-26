@@ -9,7 +9,7 @@ class FoodCollectsController < ApplicationController
     @food_collect = FoodCollect.find(params[:id])
 
     render json: @food_collect
-  end
+  en
 
   def create
     @food_collect = FoodCollect.new(name: params[:name], date: params[:date], organization_id: params[:organization_id])

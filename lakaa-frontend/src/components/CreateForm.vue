@@ -54,6 +54,7 @@ export default {
         date: this.eventDate,
         organization_id: this.selectedOrg.id
       })
+      this.$emit('updateCSRvue')
     }
   },
 };
